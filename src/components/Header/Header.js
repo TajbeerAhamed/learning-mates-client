@@ -29,7 +29,7 @@ const Header = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal p-0">
-      <li><Link>Item 1</Link></li>
+      <li><Link to={'/courses'}>Courses</Link></li>
       <li tabIndex={0}>
         <Link>
           Parent
@@ -44,7 +44,10 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link className="btn">Get started</Link>
+    <Link to={'/login'}>Log In</Link>
+  </div>
+  <div className="navbar-end">
+    <Link className="btn">Register</Link>
   </div>
 </div>
         </div>
