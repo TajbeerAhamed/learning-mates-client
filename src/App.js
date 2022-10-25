@@ -42,7 +42,7 @@ function App() {
 ]
 },
 {
-  path:'/error',
+  path:'*',
   element:<Error></Error>
 }
   ])
