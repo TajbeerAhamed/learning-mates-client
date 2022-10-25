@@ -21,6 +21,7 @@ function App() {
   },
   {
     path:'/courses',
+    loader: () => fetch('http://localhost:5000/categories'),
     element:<Courses></Courses>
 },
 {
