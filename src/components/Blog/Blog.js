@@ -21,7 +21,7 @@ For security reasons, browsers restrict cross-origin HTTP requests initiated fro
 			<details>
 				<summary className="py-2 outline-none cursor-pointer focus:underline">Why are you using Firebase?What other options do you have to implement authentication?</summary>
 				<div className="px-4 pb-4">
-					<p>Firebase helps you develop high-quality apps, grow your user base, and earn more money. Each feature works independently, and they work even better together.</p>
+					<p>Firebase helps you develop high-quality apps, grow your user base, and earn more money. Each feature works independently, and they work even better together.Firebase is a free service that lets users log in with their Google account. Firebase is a good choice if you plan to either write a brand-new application or rewrite an existing one from scratch. Additionally, Firebase helps in the easy storing and retrieval of dynamic content. If you decide to develop the application without any form of custom coding the backend, Firebase makes this easy. Firebase is also serverless which means that Firebase runs on the cloud and you don’t need a physical server that’s constantly running.</p>
 				</div>
 			</details>
 			<details>
@@ -29,11 +29,7 @@ For security reasons, browsers restrict cross-origin HTTP requests initiated fro
 				<div className="px-4 pb-4 space-y-2">
 					<p>The react private route component renders child components (children) if the user is logged in. If not logged in the user is redirected to the /login page with the return url passed in the location state property.
 
-The current logged in user (authUser) is retrieved from Redux state with a call to the useSelector() hook. Redux is used in this example however it is not required to implement a Private Route component in React Router 6. You could use a different state management library or any approach you prefer to get the logged in status of the user.The App component is the root component of the example app, it contains the outer html, main nav and routes for the application.
-
-The /login route is public, and the home route (/) is protected by the private route component that uses Redux to check if the user is logged in.
-
-The last route is a catch-all redirect route that redirects any unmatched paths to the home page.</p>
+The current logged in user (authUser) is retrieved from Redux state with a call to the useSelector() hook. Redux is used in this example however it is not required to implement a Private Route component in React Router 6. You could use a different state management library or any approach you prefer to get the logged in status of the user.</p>
 				</div>
 			
 			</details>
