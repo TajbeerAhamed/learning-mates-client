@@ -1,16 +1,16 @@
 import React from 'react';
 
 const Course = ({course}) => {
-    const {id,name} = course
+    const {heading,img,description,name} = course
     return (
         <div>
            <div className="max-w-xs p-6 rounded-md shadow-md bg-gray-900 text-gray-50">
-	<img src="https://source.unsplash.com/random/300x300/?1" alt="" className="object-cover object-center w-full rounded-md h-72 bg-gray-500" />
+	<img src={img} alt="" className="object-cover object-center w-full rounded-md h-72 " />
 	<div className="mt-6 mb-2">
-		<span className="block text-xs font-medium tracking-widest uppercase text-violet-400">{name}</span>
-		<h2 className="text-xl font-semibold tracking-wide">Nam maximus purus</h2>
+		<span className="block text-xs font-medium tracking-widest uppercase text-violet-400">{heading}</span>
+		<h2 className="text-xl font-semibold tracking-wide">{name}</h2>
 	</div>
-	<p className="text-gray-100">Mauris et lorem at elit tristique dignissim et ullamcorper elit. In sed feugiat mi. Etiam ut lacinia dui.</p>
+	<p className="text-gray-100">{description}</p>
 </div>
         </div>
     );
