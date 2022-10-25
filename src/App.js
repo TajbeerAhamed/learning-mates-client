@@ -21,7 +21,7 @@ function App() {
   },
   {
     path:'/courses',
-    loader: () => fetch('http://localhost:5000/categories'),
+    loader: () => fetch('https://learning-mate-server.vercel.app/categories'),
     element:<Courses></Courses>
 },
 {
