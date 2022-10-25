@@ -50,9 +50,9 @@ const Home = () => {
                 </svg>
                 <span className="relative">Welcome</span>
               </span>{' '}
-             to Learning Mates !!!
+             to Learning <span className='text-red-600'>Mates</span> !!!
             </h2>
-            <p className="text-base text-gray-700 md:text-lg">
+            <p className="text-base text-gray-500 md:text-lg">
              To Learn More.Clicked on Get Started...
             </p>
           </div>
