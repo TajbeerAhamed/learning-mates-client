@@ -1,10 +1,33 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
+
+
  const LogIn = () => {
+
+	const {signIn} = useContext(AuthContext)
+
+	const navigate = useNavigate()
+
+	const handleSubmit = event =>{
+		event.preventDefault()
+		const form = event.target 
+		const email = form.email.value 
+		const password = form.password.value 
+		console.log(email,password);
+		signIn(email,password)
+		.then(result =>{
+			const user = result.user 
+			console.log(user);
+			form.reset()
+			navigate('/')
+		})
+		.catch ( error => console.error(error))
+	}
+
 
 	const { providerLogin} = useContext(AuthContext)
 
@@ -45,18 +68,18 @@ providerLogin(googleProvider)
 		<p className="px-3 text-gray-400">OR</p>
 		<hr className="w-full text-gray-400"/>
 	</div>
-	<form novalidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid">
+	<form onSubmit={handleSubmit} novalidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid">
 		<div className="space-y-4">
 			<div className="space-y-2">
 				<label for="email" className="block text-sm">Email address</label>
-				<input type="email" name="email" id="email" placeholder="Please Enter your Email" className="w-full px-3 py-2 border rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
+				<input type="email" name="email" id="email" placeholder="Please Enter your Email" className="w-full px-3 py-2 border rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" required/>
 			</div>
 			<div className="space-y-2">
 				<div className="flex justify-between">
 					<label for="password" className="text-sm">Password</label>
 					<a rel="noopener noreferrer" href="#" className="text-xs hover:underline text-gray-400">Forgot password?</a>
 				</div>
-				<input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
+				<input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" required/>
 			</div>
 		</div>
 		<button type="button" className="w-full px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900">Sign in</button>

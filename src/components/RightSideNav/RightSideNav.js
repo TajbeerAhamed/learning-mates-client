@@ -6,7 +6,7 @@ const RightSideNav = ({courses}) => {
         <div className='grid grid-cols-1 mt-15'>
            {
             courses.map(course =><Link className='m-5' key={course.id}>
-                <button>{course?.name}</button>
+                <button className="btn btn-outline btn-primary">{course?.name}</button>
             </Link>)
            } 
         </div>

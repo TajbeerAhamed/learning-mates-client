@@ -1,10 +1,17 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { FaUser } from "react-icons/fa";
 
 const Header = () => {
-  const {user} = useContext(AuthContext)
+  const {user,logOut} = useContext(AuthContext)
+
+  const handleLogOut = () =>{
+    logOut()
+    .then( () =>{})
+    .catch (error => console.error(error))
+  }
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -41,14 +48,26 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link to={'/login'} className="btn">Log In</Link>
+    <Link to={'/login'} className="btn btn-outline">Log In</Link>
   </div>
   <div className='m-5'>
-    <Link to={'/register'} className="btn">Register</Link>
+    <Link to={'/register'} className="btn btn-outline">Register</Link>
   </div>
+  {/* <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+          {
+            user.photoURL?
+          
+         <Image width="200px" height="200px" src={user.photoURL}></Image>
+         :
+         <FaUser></FaUser>
+          }
+        </div>
+      </label> */}
   <div>
     <p>{user?.displayName}</p>
   </div>
+  <button onClick={handleLogOut} className="btn btn-outline">Logout</button>
 </div>
         </div>
     );
