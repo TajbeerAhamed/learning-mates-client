@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import Course from '../Course/Course';
 import RightSideNav from '../RightSideNav/RightSideNav';
 
+
 const Courses = () => {
     const courses = useLoaderData()
     return (
@@ -19,7 +20,7 @@ const Courses = () => {
     </Course>)
 }
            </div>
-           <div>
+           <div >
             <RightSideNav></RightSideNav>
            </div>
         </div>
