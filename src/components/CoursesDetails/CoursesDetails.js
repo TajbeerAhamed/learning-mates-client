@@ -7,7 +7,10 @@ const CoursesDetails = () => {
     console.log(coursesDetails);
     return (
         <div>
-            <h1 className='text-5xl mb-10 text-center font-bold'>All Details of This Course is Here</h1>
+           <div className='flex justify-center'>
+           <h1 className='text-5xl mb-10 text-center font-bold'>All Details of This Course is Here</h1>
+            <button  className="btn btn-outline btn-primary ml-5">Download Pdf</button>
+           </div>
         <div className="max-w-xs mx-auto rounded-md shadow-md bg-gray-900 text-gray-100">
 	<img src={img} alt="" className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500" />
 	<div className="flex flex-col justify-between p-6 space-y-8">

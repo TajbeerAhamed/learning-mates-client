@@ -16,13 +16,13 @@ const Register = () => {
     const name = form.name.value;
     const photoURL = form.photoURL.value;
     const email = form.email.value;
-    const password = form.email.value;
-    // const confirmedPassword = form.confirmedPassword.value
+    const password = form.password.value;
+    const confirmedPassword = form.confirmedPassword.value
     console.log(name, photoURL, email, password);
 
-    // if(password !==confirmedPassword ){
-    // 	return setError("Password doesnot Matced")
-    // }
+    if(password !==confirmedPassword ){
+    	return setError("Password doesnot Matced")
+    }
 
     createUser(email, password)
       .then((result) => {
@@ -98,7 +98,29 @@ const Register = () => {
                   href="#"
                   className="text-xs hover:underline text-gray-400"
                 >
-                  Forgot password?
+                 
+                </Link>
+              </div>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="*****"
+                className="w-full px-3 py-2 border rounded-md border-gray-700 bg-gray-900 text-gray-100"
+                required
+              />
+            </div>
+            <div>
+              <div className="flex justify-between mb-2">
+                <label htmlFor="password" className="text-sm">
+               Confirm Password
+                </label>
+                <Link
+                  rel="noopener noreferrer"
+                  href="#"
+                  className="text-xs hover:underline text-gray-400"
+                >
+                 
                 </Link>
               </div>
               <input
@@ -120,6 +142,7 @@ const Register = () => {
                 Register
               </button>
             </div>
+            <p className="text-red-500">{error}</p>
             <p className="px-6 text-sm text-center text-gray-400">
               Already have an Account Login?
               <Link
