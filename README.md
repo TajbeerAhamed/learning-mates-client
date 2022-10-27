@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# Project Name: Learning Mates Client
+
+##Live Link: https://learning-mates-client.web.app/
+- A web development learning website
+- see course details here 
+- Faq added 
+- Question and Answer part 
+- Login and Register form and Auth added
+- Technologies 1.TailwindCss Library Component (DaisyUi,MambaUi,KitWind) 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

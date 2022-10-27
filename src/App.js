@@ -22,13 +22,13 @@ function App() {
         },
         {
           path: "/courses",
-          loader: () => fetch("http://localhost:5000/details"),
+          loader: () => fetch("https://learning-mate-server.vercel.app/details"),
           element: <Courses></Courses>,
         },
         {
           path: "/coursesDetails/:id",
           loader: async ({ params }) =>
-            fetch(`http://localhost:5000/details/${params.id}`),
+            fetch(`https://learning-mate-server.vercel.app/details/${params.id}`),
           element: <CoursesDetails></CoursesDetails>,
         },
 

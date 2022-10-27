@@ -21,6 +21,7 @@ const Register = () => {
     console.log(name, photoURL, email, password);
 
     if(password !==confirmedPassword ){
+      console.log('fdgfdh');
     	return setError("Password doesnot Matced")
     }
 
@@ -112,7 +113,7 @@ const Register = () => {
             </div>
             <div>
               <div className="flex justify-between mb-2">
-                <label htmlFor="password" className="text-sm">
+                <label htmlFor="confirmedPassword" className="text-sm">
                Confirm Password
                 </label>
                 <Link
@@ -125,8 +126,8 @@ const Register = () => {
               </div>
               <input
                 type="password"
-                name="password"
-                id="password"
+                name="confirmedPassword"
+                id="confirmedPassword"
                 placeholder="*****"
                 className="w-full px-3 py-2 border rounded-md border-gray-700 bg-gray-900 text-gray-100"
                 required
