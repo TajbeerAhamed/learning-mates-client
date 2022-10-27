@@ -8,7 +8,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
  const LogIn = () => {
 
-	const {signIn} = useContext(AuthContext)
+	const {signIn,signInwithGoogle,signInwithGithub} = useContext(AuthContext)
 
 	const navigate = useNavigate()
 
@@ -35,6 +35,18 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 	const githubProvider = new GithubAuthProvider()
 
+	const googleLogin = () =>{
+		signInwithGoogle(googleProvider)
+		.then((result) =>{
+			const user = result.user 
+			console.log(user);
+		})
+
+		.catch((error) =>{
+			console.error(error)
+		})
+	}
+
 	const handleGoogleSignIn = () =>{
 providerLogin(googleProvider)
 .then(result =>{
@@ -52,7 +64,7 @@ providerLogin(googleProvider)
         <div className="w-100 align-items-center max-w-md p-4 rounded-md shadow sm:p-8 bg-gray-900 text-gray-100">
 	<h2 className="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
 	<p className="text-sm text-center text-gray-400">Dont have account?
-		<Link to={'/register'} rel="noopener noreferrer" className="focus:underline hover:underline">Sign up here</Link>
+		<Link to={'/register'} rel="noopener noreferrer" className="focus:underline hover:underline">Register</Link>
 	</p>
 	<div className="my-6 space-y-4">
 		<button onClick={handleGoogleSignIn}  aria-label="Login with Google" type="button" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-violet-400">

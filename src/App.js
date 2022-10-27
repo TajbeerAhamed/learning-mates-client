@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Blog from './components/Blog/Blog';
 import Courses from './components/Courses/Courses';
+import CoursesDetails from './components/CoursesDetails/CoursesDetails';
 import Error from './components/Error/Error';
 import Faq from './components/Faq/Faq';
 import Home from './components/Home/Home';
@@ -23,6 +24,11 @@ function App() {
     path:'/courses',
     loader: () => fetch('https://learning-mate-server.vercel.app/categories'),
     element:<Courses></Courses>
+},
+{
+  path:'/coursesDetails/:id',
+  loader: () => fetch ('https://learning-mate-server.vercel.app/categories'),
+  element: <CoursesDetails></CoursesDetails>
 },
 {
   path:'/faq',
